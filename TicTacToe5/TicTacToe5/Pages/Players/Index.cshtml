@@ -1,0 +1,82 @@
+﻿@page
+@model TicTacToe5.Pages.Players.IndexModel
+
+@{
+   ViewData["Title"] = "Index";
+}
+@if (Model.TblPlayers != null)
+{
+   <h1>TicTacToe5!</h1>
+
+   <table class="table">
+      <thead>
+         <tr>
+            <th>
+               @Html.DisplayNameFor(model => model.TblPlayers.Username)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.TblPlayers.Password)
+            </th>
+            <th></th>
+         </tr>
+      </thead>
+      <tbody>
+         @{
+            <tr>
+               <td>
+                  @Html.DisplayFor(modelItem => Model.TblPlayers.Username)
+               </td>
+               <td>
+                  @Html.DisplayFor(modelItem => Model.TblPlayers.Password)
+               </td>
+               <td>
+                  <a asp-page="./Edit" asp-route-id="@Model.TblPlayers.PlayerId">Edit</a> |
+                  <a asp-page="./Details" asp-route-id="@Model.TblPlayers.PlayerId">Details</a> |
+                  <a asp-page="./Delete" asp-route-id="@Model.TblPlayers.PlayerId">Delete</a>
+               </td>
+            </tr>
+         }
+      </tbody>
+   </table>
+
+}
+@if (Model.TblPlayersList != null)
+{
+   <h1>TicTacToe5!</h1>
+
+   <table class="table">
+      <thead>
+         <tr>
+            <th>
+               @Html.DisplayNameFor(model => model.TblPlayersList[0].Username)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.TblPlayersList[0].Password)
+            </th>
+            <th></th>
+         </tr>
+      </thead>
+      <tbody>
+         @foreach (var item in Model.TblPlayersList)
+         {
+            <tr>
+               <td>
+                  @Html.DisplayFor(modelItem => item.PlayerId)
+               </td>
+               <td>
+                  @Html.DisplayFor(modelItem => item.Username)
+               </td>
+               <td>
+                  @Html.DisplayFor(modelItem => item.Password)
+               </td>
+               <td>
+                  <a asp-page="./Edit" asp-route-id="@item.PlayerId">Edit</a> |
+                  <a asp-page="./Details" asp-route-id="@item.PlayerId">Details</a> |
+                  <a asp-page="./Delete" asp-route-id="@item.PlayerId">Delete</a>
+               </td>
+            </tr>
+         }
+      </tbody>
+   </table>
+}
+

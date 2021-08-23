@@ -1,0 +1,37 @@
+﻿@page
+@model TicTacToe5.Pages.Games.NumOfGamesModel
+
+@{
+    ViewData["Title"] = "NumOfGames";
+}
+
+<h1>NumOfGames</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblGames[0].PlayerId)
+            </th>
+            <th>
+               <label>Number of Games</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblGames) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerId)
+            </td>
+            <td>
+                @Model.Count
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

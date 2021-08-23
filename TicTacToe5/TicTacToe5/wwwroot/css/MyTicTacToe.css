@@ -1,0 +1,32 @@
+﻿/* * {
+  outline: 1px solid red;
+} */
+
+table.mytable {
+   margin: 0 auto;
+}
+
+td {
+   width: 100px;
+   height: 100px;
+}
+
+.top {
+   border-left: 5px solid black;
+   border-right: 5px solid black;
+}
+
+.left {
+   border-top: 5px solid black;
+   border-bottom: 5px solid black;
+}
+
+.middle {
+   border: 5px solid black;
+}
+
+p {
+   font-family: sans-serif;
+   font-size: 3em;
+   text-align: center;
+}

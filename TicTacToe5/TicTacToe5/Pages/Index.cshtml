@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+   ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><strong>Tic Tac Toe 5!</strong></h1>
+    <a href="./Players">Go to Index of Players</a>
+</div>
+
+<div class="login">
+   <div class="heading">
+      <h2>Sign in</h2>
+      <form action="" method="post">
+
+         <div class="input-group input-group-lg">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" name="username" class="form-control" placeholder="Username">
+            <span asp-validation-for="TblPlayers.Username" class="text-danger"></span>
+            @{
+            //<span asp-validation-for="TblPlayers.Username" class="text-danger"></span>
+               }
+         </div>
+
+         <div class="input-group input-group-lg">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input name="password" type="password" class="form-control" placeholder="Password">
+            <span asp-validation-for="TblPlayers.Password" class="text-danger"></span>
+            @{
+              //<span asp-validation-for="TblPlayers.Password" class="text-danger"></span>
+            }
+         </div>
+         <br />
+         <button asp-page="./Players/Index" type="submit" class="float">Login</button>
+         
+      </form>
+   </div>
+</div>
+<a asp-page="/Players/Create">Create New</a>

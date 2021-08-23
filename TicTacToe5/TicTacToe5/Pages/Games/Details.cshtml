@@ -1,0 +1,37 @@
+﻿@page
+@model TicTacToe5.Pages.Games.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblGames</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblGames.PlayerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblGames.PlayerId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblGames.Winner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblGames.Winner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblGames.StatesJSON)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblGames.StatesJSON)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblGames.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

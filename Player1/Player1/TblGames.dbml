@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Games" Class="TblGamesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Games;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Player1.Properties.Settings" SettingsPropertyName="GamesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TblGames" Member="TblGames">
+    <Type Name="TblGame">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerId" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Winner" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StatesJSON" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
